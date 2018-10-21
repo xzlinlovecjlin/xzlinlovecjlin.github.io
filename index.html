@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Atill...</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+<!--
+ <div style="display: none"; class="music">
+	<audio controls="controls" autoplay="autoplay" loop="-1">
+		<source src="js/Thought.mp3" type="audio/mp3">
+	</audio>
+</div> 
+-->
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<script src='js/snowfall.jquery.js'></script>
+</head>
+
+<audio src="night.mp3" autoplay="true" loop="-1"></audio>
+
+<body>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			或许，你再不会踏足这儿吧，但还是想写一写<br />
+			这个时候啥时候呢？圣诞快乐？新年快乐？<br />
+			有时候，自己也很惊讶，但也很庆幸，以及开心<br />
+			我还是好喜欢好喜欢你诶<br />
+			想起你的时刻经常不期而至<br />
+			有你的梦也偶尔来拜访<br />
+			你肯定不知道，曾经有一次，梦见<br />
+			我突然醒来，窗外风和日丽，身边则是你<br />
+			我一脸恐慌和茫然，不是已经分手了么<br />
+			你笑着摸摸我的脑袋，说<br />
+			你在做梦呐，已经醒啦，你看，我还在这呢<br />
+			梦醒时刻，最为伤心，只是梦<br />
+			但又好满足，这似乎暗示着，某一个平行宇宙，我和你仍在一起<br />
+			三个月前的我，空洞悲伤的我写了好多东西，拼命期望着5个月之后的我<br />
+			还能保留原有的喜欢，同时，又无比惧怕，时间这个毒药<br />
+			所以，很，emmm，开心，某种意义上<br />
+			没想着要怎么样啦，每每会强烈的去期盼你回来<br />
+			可是，失去毕竟失去了<br />
+			直到现在，每次想起，都会后悔，后悔那段时间我所做的一切<br />
+			虽然距离是一道难题，但真正被打败的是我自己的不安<br />
+			过去的种种，真是太作死了啊，真特么傻<br />
+			分开了三个月，我应该，成长了好多吧<br />
+			曾有你，真是可甜可甜的回忆<br />
+			若是有未满足的，大概就是，没有再多多陪在你身边吧<br />
+			不能改变什么，就是想着，或许能让你回想起来，会甜一些h<br />
+			超喜欢你了，希望你滴心愿实现一半，非短暂但又快乐的一生~<br />
+			
+			<br>
+			
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					依旧挂念着
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					yeah<br/>
+					<div class="signature">- Lin</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+			$(document).ready(function(){
+			$(document).snowfall({round : true, minSize: 5, maxSize:8});
+		});
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2018);
+together.setMonth(7);
+together.setDate(17);
+together.setHours(0);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+console.log(together);
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "这就很悲桑了，你的浏览器，不支持，要不，换一个？"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 500);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+</body>
+</html>
